@@ -1,0 +1,184 @@
+:root {
+  --bg-color: #f8f9fa;
+  --text-color: #212529;
+  --border-color: #dee2e6;
+  --accent-color: #007bff;
+  --error-color: #dc3545;
+  --success-color: #28a745;
+  --disabled-color: #6c757d;
+}
+
+.dark-theme {
+  --bg-color: #212529;
+  --text-color: #f8f9fa;
+  --border-color: #495057;
+  --accent-color: #0d6efd;
+  --error-color: #e35d6a;
+  --success-color: #4bc969;
+  --disabled-color: #adb5bd;
+}
+
+.light-theme {
+  --bg-color: #f8f9fa;
+  --text-color: #212529;
+  --border-color: #dee2e6;
+  --accent-color: #007bff;
+  --error-color: #dc3545;
+  --success-color: #28a745;
+  --disabled-color: #6c757d;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.forca-container {
+  margin-bottom: 20px;
+}
+
+.forca {
+  stroke: var(--text-color);
+  fill: none;
+}
+
+.forca circle {
+  fill: var(--bg-color);
+  stroke: var(--text-color);
+  stroke-width: 4;
+}
+
+.palavra-container h2 {
+  font-size: 2rem;
+  letter-spacing: 5px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.letras-erradas {
+  margin-bottom: 20px;
+}
+
+.teclado {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  max-width: 500px;
+}
+
+.tecla {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--border-color);
+  border-radius: 5px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tecla:hover:not(:disabled) {
+  background-color: var(--accent-color);
+  color: white;
+  transform: scale(1.1);
+}
+
+.tecla:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.tecla.acerto {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.tecla.erro {
+  background-color: var(--error-color);
+  color: white;
+}
+
+.game-over {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flexbox;
+  flex-direction: column-reverse;
+  align-items: self-end;
+}
+
+.btn-jogar-novamente {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-jogar-novamente:hover {
+  background-color: var(--success-color);
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.theme-btn {
+  padding: 8px 16px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.theme-btn:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+  .tecla {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+  
+  .palavra-container h2 {
+    font-size: 1.5rem;
+  }
+}
